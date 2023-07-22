@@ -1,0 +1,279 @@
+Python Assignment - 6
+
+1. What are escape characters, and how do you use them?
+
+Sol: Escape characters are special characters used in programming and computing to represent certain non-printable or reserved characters. 
+
+ a) Newline (\n): It represents the line feed character and is used to insert a new line in a string.
+
+ b) Tab (\t): It represents the horizontal tab character and is used to insert a tab space in a string.
+
+ c) Backslash (\\): It represents a single backslash character itself. This is used when you need to include a backslash in the string.
+
+  Eg- # Newline and tab characters
+      print("Hello\nWorld")
+      print("Hello\tWorld")
+
+     # Including backslash, single quote, and double quote in the string
+     print("This is a backslash: \\")
+     print('He said, "Hello!"')
+     print("She said, 'Hi!'")
+
+     # Hexadecimal escape
+     print("\x41")  # Output: A
+
+2. What do the escape characters n and t stand for?
+
+Sol: 1. \n: Newline
+
+      In programming, \n represents the newline character, which is used to start a new line in a text string or output.
+      When encountered in a string, it causes the text following it to be placed on a new line.
+
+   Eg- Hello
+       World
+
+2. \t: Tab
+
+     \t represents the horizontal tab character, which is used to create a tab space in a text string or output. 
+     It is often used to format text in a way that aligns certain elements.
+
+   Eg- Name:   John
+
+
+3. What is the way to include backslash characters in a string?
+
+Sol: A backslash character ("") in a string, you need to use the backslash itself as an escape character. 
+     Since the backslash is used as an escape character, you must use a double backslash ("\") to represent a single backslash in the string.
+
+  Eg - # Using double backslash to include a single backslash
+       my_string = "This is a backslash: \\"
+       print(my_string)  # Output: This is a backslash: \
+
+
+4. The string "Howl's" Moving Castle&quot; is a correct value. Why isn&#39;t the single quote character in the
+    word Howl's not escaped a problem?
+
+Sol: In the string "Howl's Moving Castle," the single quote character in the word "Howl's" is not causing a problem because it is properly 
+     enclosed within double quotes. In most programming languages, both single quotes (' ') and double quotes (" ") can be used to define 
+     string literals, and they can be used interchangeably.
+
+  EG - # Using double quotes to define the string with a single quote inside
+       my_string = "Howl's Moving Castle"
+       print(my_string)  # Output: Howl's Moving Castle
+
+       # Using single quotes to define the string with a double quote inside
+       another_string = 'She said, "Hello!"'
+       print(another_string)  # Output: She said, "Hello!"
+
+
+5. How do you write a string of newlines if you don't want to use the n character?
+
+Sol: If we don't want to use the escape character \n to represent newlines in a string, you can use the actual newlines directly.
+     In Python, you can use triple quotes (''' or """) to write a string that spans multiple lines, including newlines.
+
+
+   Eg- my_string = '''This is a string
+       that spans multiple lines
+       without using the escape character \n.'''
+       print(my_string)
+
+
+6. What are the values of the given expressions?
+
+'Hello, world!'[1]
+'Hello, world!'[0:5]
+'Hello, world!'[:5]
+'Hello, world!'[3:]
+
+Sol: 1. 'Hello, world!'[1]: This expression will return the character at index 1,
+         which is the second character of the string (indexing starts from 0).
+   
+    2. 'Hello, world!'[0:5]: This expression will return the substring starting from index 0 (inclusive) and ending at index 5
+       (exclusive). It will include characters at positions 0, 1, 2, 3, and 4.
+
+    3. 'Hello, world!'[:5]: This expression is the same as the previous one but omits the starting index, which defaults to 0. 
+       It will include characters at positions 0, 1, 2, 3, and 4.
+   
+    4. 'Hello, world!'[3:]: This expression will return the substring starting from index 3 (inclusive) until the end of the string.
+    
+    Output : 'e'
+          'Hello'
+          'Hello'
+          'lo, world!
+
+7. What are the values of the following expressions?
+'Hello'.upper()
+'Hello'.upper().isupper()
+'Hello'.upper().lower()
+
+
+Sol: 1. 'Hello'.upper(): The upper() method is used to convert all characters in the string to uppercase.
+     It returns a new string with all uppercase characters.
+     Result: 'HELLO'
+
+  2. 'Hello'.upper().isupper(): In this expression, we first convert the original string "Hello" to uppercase using the upper() method.
+     Then, we use the isupper() method to check if all characters in the resulting string are uppercase. The isupper() method returns a
+     Boolean value (True or False).
+     Result: True
+
+  3. 'Hello'.upper().lower(): In this expression, we first convert the original string "Hello" to uppercase using the upper() method.
+      Then, we use the lower() method to convert all characters in the resulting string back to lowercase. The lower() method returns a 
+      new string with all lowercase characters.
+      Result: 'hello'
+
+
+8. What are the values of the following expressions
+'Remember, remember, the fifth of July.'.split()
+'_'.join(&#39;There can only one.'.split())
+
+Sol: 1. 'Remember, remember, the fifth of July.'.split(): The split() method is used to split a string into a list of substrings based on 
+     whitespace (spaces, tabs, and newlines) by default. If no argument is provided, it will split the string using whitespace as the separator.
+     Result: ['Remember,', 'remember,', 'the', 'fifth', 'of', 'July.']
+  
+    2. '_'.join('There can only one.'.split()): In this expression, the split() method is first applied to the string 'There can only one.', 
+      which will   split the string into substrings based on whitespace:
+    ['There', 'can', 'only', 'one.']
+
+    Then, the '_'.join() method is used to join these substrings back together using an underscore ('_') as the separator.
+    Result: 'There_can_only_one.'
+
+
+9. What are the methods for right-justifying, left-justifying, and centering a string?
+
+Sol: 1. Right-justifying a string: 
+     The str.rjust() method is used to right-justify a string by adding spaces (or a specified character) to the left of the string until
+     it reaches the desired width.
+    
+    Syntax - str.rjust(width[, fillchar])
+
+    Eg- text = "Hello"
+      right_justified_text = text.rjust(10)
+      print(right_justified_text) 
+      Output: '    Hello'
+   
+     2. Left-justifying a string: The str.ljust() method is used to left-justify a string by adding spaces (or a specified character) 
+        to the right of the string until it reaches the desired width.
+
+    Syntax : str.ljust(width[, fillchar])
+
+    Eg - text = "Hello"
+    left_justified_text = text.ljust(10)
+    print(left_justified_text) 
+
+    Output: 'Hello     '
+
+   3. Centering a string: The str.center() method is used to center a string by adding spaces (or a specified character) to both sides of 
+      the string until it reaches the desired width. If the total width is odd, the extra character will be added to the right side.
+     
+    Syntax : str.center(width[, fillchar])
+
+    Eg - text = "Hello"
+    centered_text = text.center(10)
+    print(centered_text)
+
+   Output: '  Hello   '
+
+
+10. What is the best way to remove whitespace characters from the start or end?
+
+Sol: The best way to remove whitespace characters from the start or end of a string is by using the str.strip() method in Python.
+     This method removes leading and trailing whitespace characters (spaces, tabs, and newlines) from the string and returns a new string
+     with the whitespace removed.
+
+    Syntax: str.strip([characters])
+
+   characters (optional): If provided, it specifies a string containing the characters to be removed from the start and end of the original string. 
+   If not provided, it removes all whitespace characters by default.
+
+   Eg - text = "   Hello, world!   "
+       stripped_text = text.strip()
+       print(stripped_text) 
+
+   Output: 'Hello, world!'
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
